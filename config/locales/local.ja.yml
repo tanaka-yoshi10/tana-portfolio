@@ -1,0 +1,20 @@
+ja:
+  activerecord:
+    models:
+      portfolio: ポートフォリオ
+    attributes:
+      portfolio:
+        name: 名前
+        area: エリア
+        category: 分類
+        ratio: 比率
+  enumerize:
+    portfolio:
+      area:
+        japan: 国内
+        emerging: 新興国
+        developed: 先進国
+      category:
+        stock: 株式
+        bond: 債券
+        reit: REIT

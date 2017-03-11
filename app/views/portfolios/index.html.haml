@@ -3,10 +3,10 @@
 %table.table
   %thead
     %tr
-      %th Name
-      %th Area
-      %th Category
-      %th Ratio
+      %th= Portfolio.human_attribute_name :name
+      %th= Portfolio.human_attribute_name :area
+      %th= Portfolio.human_attribute_name :category
+      %th= Portfolio.human_attribute_name :ratio
       %th
       %th
       %th
@@ -15,8 +15,8 @@
     - @portfolios.each do |portfolio|
       %tr
         %td= portfolio.name
-        %td= portfolio.area
-        %td= portfolio.category
+        %td= portfolio.area_text
+        %td= portfolio.category_text
         %td= portfolio.ratio
         %td= link_to 'Show', portfolio
         %td= link_to 'Edit', edit_portfolio_path(portfolio)
