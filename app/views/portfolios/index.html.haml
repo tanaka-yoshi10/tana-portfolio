@@ -1,5 +1,25 @@
 %h1 Listing portfolios
 
+.row
+  .col-md-6
+    %h2 エリア比率
+    - @portfolios.group(:area).sum(:ratio).each do |key, value|
+      %p
+        #{Portfolio.area_text key} #{value}%
+
+    %p
+      合計 #{@portfolios.sum(:ratio)} %
+
+  .col-md-6
+    %h2 分類比率
+    - @portfolios.group(:category).sum(:ratio).each do |key, value|
+      %p
+        #{Portfolio.category_text key} #{value}%
+
+    %p
+      合計 #{@portfolios.sum(:ratio)} %
+
+%h2 詳細
 %table.table
   %thead
     %tr
@@ -9,16 +29,14 @@
       %th= Portfolio.human_attribute_name :ratio
       %th
       %th
-      %th
 
   %tbody
     - @portfolios.each do |portfolio|
       %tr
-        %td= portfolio.name
+        %td= link_to portfolio.name, portfolio
         %td= portfolio.area_text
         %td= portfolio.category_text
         %td= portfolio.ratio
-        %td= link_to 'Show', portfolio
         %td= link_to 'Edit', edit_portfolio_path(portfolio)
         %td= link_to 'Destroy', portfolio, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
