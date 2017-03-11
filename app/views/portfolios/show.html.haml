@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @portfolio.name
+%p
+  %b Area:
+  = @portfolio.area
+%p
+  %b Category:
+  = @portfolio.category
+%p
+  %b Ratio:
+  = @portfolio.ratio
+
+= link_to 'Edit', edit_portfolio_path(@portfolio)
+\|
+= link_to 'Back', portfolios_path
