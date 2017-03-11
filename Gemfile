@@ -56,6 +56,7 @@ gem 'haml-rails', '~> 0.9'
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'simple_form'
+gem 'enumerize'
 
 group :test do
   gem 'rspec-rails'
