@@ -54,6 +54,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'haml-rails', '~> 0.9'
 gem 'devise'
+gem 'bootstrap-sass'
+gem 'simple_form'
+
 group :test do
   gem 'rspec-rails'
   gem 'capybara'

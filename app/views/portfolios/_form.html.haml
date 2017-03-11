@@ -1,22 +1,11 @@
-= form_for @portfolio do |f|
-  - if @portfolio.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@portfolio.errors.count, "error")} prohibited this portfolio from being saved:"
-      %ul
-        - @portfolio.errors.full_messages.each do |msg|
-          %li= msg
+= simple_form_for(@portfolio) do |f|
+  = f.error_notification
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :area
-    = f.text_field :area
-  .field
-    = f.label :category
-    = f.text_field :category
-  .field
-    = f.label :ratio
-    = f.number_field :ratio
-  .actions
-    = f.submit 'Save'
+  .form-inputs
+    = f.input :name
+    = f.input :area
+    = f.input :category
+    = f.input :ratio
+
+  .form-actions
+    = f.button :submit, class: 'btn'
